@@ -1,0 +1,233 @@
+:root {
+  font-family: 'Crimson Text', serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: rgba(255, 255, 255, 0.9);
+  background-color: #0a0a0f;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0a0f 0%, #1a1025 100%);
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?auto=format&fit=crop&q=80') center/cover no-repeat;
+  opacity: 0.15;
+  z-index: -1;
+}
+
+#app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+  padding: 2rem 0;
+}
+
+.title {
+  font-size: 4rem;
+  color: #e2b714;
+  text-shadow: 0 0 10px rgba(226, 183, 20, 0.5);
+  margin: 0;
+  font-family: 'Cinzel Decorative', cursive;
+  letter-spacing: 2px;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #8a7b61;
+  margin-top: 0.5rem;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: rgba(26, 23, 31, 0.8);
+  border: 1px solid #352f40;
+  border-radius: 10px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(226, 183, 20, 0.2);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #e2b714, transparent);
+}
+
+.card.featured {
+  background: rgba(40, 35, 50, 0.9);
+  border-color: #e2b714;
+}
+
+.card.featured::before {
+  background: #e2b714;
+}
+
+.card h2 {
+  color: #e2b714;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-family: 'Cinzel Decorative', cursive;
+}
+
+.card p {
+  color: #a89f9f;
+  line-height: 1.6;
+}
+
+.featured-section {
+  margin-top: 4rem;
+  padding: 2rem;
+  background: rgba(26, 23, 31, 0.9);
+  border-radius: 15px;
+  border: 1px solid #352f40;
+}
+
+.featured-section h2 {
+  color: #e2b714;
+  font-family: 'Cinzel Decorative', cursive;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.story-card {
+  padding: 1.5rem;
+  background: rgba(40, 35, 50, 0.8);
+  border-radius: 8px;
+  border: 1px solid #453d54;
+}
+
+.story-card h3 {
+  color: #e2b714;
+  font-family: 'Cinzel Decorative', cursive;
+  margin-bottom: 1rem;
+}
+
+.story-card p {
+  color: #a89f9f;
+}
+
+.quote-section {
+  margin: 4rem 0;
+  text-align: center;
+  padding: 2rem;
+}
+
+.quote-section blockquote {
+  font-size: 1.5rem;
+  color: #e2b714;
+  font-style: italic;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.footer {
+  margin-top: 4rem;
+  padding: 2rem;
+  border-top: 1px solid #352f40;
+  color: #8a7b61;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+  color: #e2b714;
+  font-family: 'Cinzel Decorative', cursive;
+  margin-bottom: 1rem;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.5rem;
+  color: #a89f9f;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li:hover {
+  color: #e2b714;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid #352f40;
+}
+
+.creator {
+  color: #e2b714;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .story-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+}
